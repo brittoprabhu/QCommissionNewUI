@@ -49,10 +49,29 @@
     .page-controls .btn.rounded-circle { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
     .page-controls .input-group-text { background: #fff; }
     .page-controls .vr { align-self: stretch; width: 1px; background-color: #dee2e6; opacity: 1; margin: 0 .25rem; }
-    .page-header { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; }
+    .page-controls { display: inline-flex; flex-wrap: wrap; align-items: center; row-gap: .5rem; }
+    .global-header { border-bottom: 1px solid #dee2e6; background-color: #fff; }
+    .global-header .app-search { width: clamp(180px, 25vw, 280px); }
+    .global-header .icon-button {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #495057;
+      background-color: #f5f6f7;
+      border: 1px solid transparent;
+    }
+    .global-header .icon-button:hover {
+      color: #0f5132;
+      background-color: #e8f6ef;
+      border-color: #b8e0cd;
+    }
+    .company-meta { line-height: 1.1; }
+    .company-meta .company-range { font-size: .75rem; color: #6c757d; }
+    .page-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; }
     .page-header h4 { margin: 0; font-size: 1.35rem; }
-    .page-subheader { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; }
-    .page-subheader nav { flex-grow: 1; }
   </style>
 </head>
 
@@ -84,19 +103,50 @@
 
     <!-- Main content -->
     <main class="flex-grow-1">
+      <header class="global-header px-3 py-2">
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <img src="https://dummyimage.com/140x36/00a86b/ffffff&text=QCommission" alt="QCommission logo" class="img-fluid" style="max-width: 140px;">
+          <div class="input-group input-group-sm app-search">
+            <span class="input-group-text border-end-0"><i class="fa fa-search text-muted"></i></span>
+            <input type="search" class="form-control border-start-0" placeholder="Search...">
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              App Selection
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Commission Processing</a></li>
+              <li><a class="dropdown-item" href="#">Payee &amp; Plan Admin</a></li>
+              <li><a class="dropdown-item" href="#">Master Data</a></li>
+            </ul>
+          </div>
+          <div class="company-meta text-gray-15">
+            <div class="fw-semibold">MaxBlox Corporation</div>
+            <div class="company-range">Jan 01, 2024 – Dec 31, 2024</div>
+          </div>
+          <div class="ms-auto d-flex align-items-center gap-2">
+            <button class="icon-button" type="button" aria-label="Favorites"><i class="fa fa-star"></i></button>
+            <button class="icon-button" type="button" aria-label="Feedback"><i class="fa fa-comment-dots"></i></button>
+            <button class="icon-button" type="button" aria-label="Alerts"><i class="fa fa-bell"></i></button>
+            <button class="icon-button" type="button" aria-label="Profile"><i class="fa fa-user"></i></button>
+          </div>
+        </div>
+      </header>
       <div class="p-3">
         <div class="page-header">
-          <i class="fa fa-user text-success fs-5"></i>
-          <h4 class="text-gray-15">Payee</h4>
-        </div>
-        <div class="page-subheader">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Commissioning</a></li>
-              <li class="breadcrumb-item"><a href="#">Manage Payees</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Payee</li>
-            </ol>
-          </nav>
+          <div class="d-flex align-items-start gap-2">
+            <i class="fa fa-user text-success fs-5"></i>
+            <div>
+              <h4 class="text-gray-15">Payee</h4>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="#">Commissioning</a></li>
+                  <li class="breadcrumb-item"><a href="#">Manage Payees</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Payee</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
           <div class="d-flex align-items-center gap-2 page-controls">
             <button type="button" class="btn btn-success btn-sm rounded-circle"><i class="fa fa-plus"></i></button>
             <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"><i class="fa fa-table-cells"></i></button>
