@@ -40,9 +40,17 @@
       color: #495057;
     }
     .breadcrumb { margin-bottom: 0; }
+    .topbar .breadcrumb { font-size: .85rem; }
+    .topbar .breadcrumb-item a { color: #6c757d; text-decoration: none; }
+    .topbar .breadcrumb-item.active { color: #212529; font-weight: 600; }
+    .topbar .breadcrumb-item + .breadcrumb-item::before { color: #adb5bd; content: '›'; }
     .nav-section-title { font-size: .75rem; text-transform: uppercase; color: #6c757d; margin: .75rem 1rem .25rem; }
     .vh60 { min-height: 60vh; }
     .topbar { border-bottom: 1px solid #ddd; background: #fff; }
+    .page-controls .btn { font-size: .75rem; }
+    .page-controls .btn.rounded-circle { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+    .page-controls .input-group-text { background: #fff; }
+    .page-controls .vr { align-self: stretch; width: 1px; background-color: #dee2e6; opacity: 1; margin: 0 .25rem; }
   </style>
 </head>
 
@@ -75,12 +83,26 @@
     <!-- Main content -->
     <main class="flex-grow-1">
       <div class="topbar d-flex align-items-center justify-content-between px-3 py-2">
-        <div class="small text-muted">Payee and Plan Admin >> Payee</div>
         <div class="d-flex align-items-center gap-2">
-          <input class="form-control form-control-sm" style="width:250px;" placeholder="Search for...">
-          <i class="fa fa-bell text-muted"></i>
-          <i class="fa fa-gear text-muted"></i>
-          <div class="rounded-circle bg-secondary text-white text-center" style="width:28px;height:28px;line-height:28px;">CA</div>
+          <i class="fa fa-layer-group text-success fs-5"></i>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="#">Commissioning</a></li>
+              <li class="breadcrumb-item"><a href="#">Manage Payees</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Payee</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="d-flex align-items-center gap-2 page-controls">
+          <button type="button" class="btn btn-success btn-sm rounded-circle"><i class="fa fa-plus"></i></button>
+          <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"><i class="fa fa-table-cells"></i></button>
+          <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle"><i class="fa fa-list"></i></button>
+          <div class="vr"></div>
+          <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1"><i class="fa fa-arrow-up-wide-short"></i><span>Sort</span></button>
+          <div class="input-group input-group-sm" style="width: 220px;">
+            <span class="input-group-text border-end-0"><i class="fa fa-search text-muted"></i></span>
+            <input class="form-control border-start-0" type="search" placeholder="Search payees...">
+          </div>
         </div>
       </div>
 
