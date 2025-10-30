@@ -14,7 +14,23 @@
     body { background-color: #f5f6f7; font-size: 0.9rem; }
     .sidebar { width: 240px; background: #fff; border-right: 1px solid #dee2e6; height: 100vh; overflow-y: auto; position: sticky; top: 0; }
     .sidebar .nav-link { color: #333; font-weight: 500; padding: .4rem 1rem; }
+    .sidebar .nav-link i {
+      background: linear-gradient(135deg, #1fa36f, #0c7f52);
+      color: #fff;
+      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: .75rem;
+      box-shadow: 0 2px 4px rgba(15, 89, 60, 0.25);
+      font-size: 0.9rem;
+    }
     .sidebar .nav-link:hover { background: #e9ecef; border-radius: .25rem; }
+    .sidebar .nav-link:hover i {
+      box-shadow: 0 3px 6px rgba(15, 89, 60, 0.35);
+    }
     .app-shell { border: 1px solid #dcdcdc; background: #fff; border-radius: 0.5rem; }
     .section-card { border: 1px solid #ccc; border-radius: 0.5rem; background: #f8f9fa; }
     .section-header { background: #bfc3c7; color: #222; font-weight: 600; font-size: .9rem; padding: .3rem .6rem; border-top-left-radius: .5rem; border-top-right-radius: .5rem; display:flex; justify-content:space-between; align-items:center; }
